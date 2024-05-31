@@ -1,0 +1,35 @@
+<p style="color: green"><%= notice %></p>
+<div class="row">
+  <h1 class="col-md-4">Lista de Amigos</h1>
+  <div class="col-md-4"></div>
+  <div class="col-md-4 center"><%= link_to "Novo Amigo", new_friend_path, class: "btn btn-success" %> </div>
+</div>
+<div id="friends">
+        <table class="table table-striped table-hover">
+          <thead class="table-dark">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Nome</th>
+              <th scope="col">Sobrenome</th>
+              <th scope="col">Email</th>
+              <th scope="col">Telefone</th>
+              <th scope="col">Instagram</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+          <% @friends.each do |friend| %>
+            <tr>
+              <th scope="row">1</th>
+              <td><%= friend.first_name %></td>
+              <td><%= friend.last_name %></td>
+              <td><%= friend.email %></td>
+              <td><%= friend.phone %></td>
+              <td><%= friend.instagram %></td>
+              <td><%= link_to "Visualizar", friend, class: "btn btn-warning"%></td>
+            </tr>
+          <% end %>
+          </tbody>
+        </table>
+</div>
+
